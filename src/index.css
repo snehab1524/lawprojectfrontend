@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #0a2540;
+    --color-primary-dark: #081c30;
+    --color-secondary: #2e6f95;
+    --color-secondary-dark: #245977;
+    --color-light: #e5e7eb;
+    --color-dark: #111827;
+    --color-white: #ffffff;
+    --color-surface: #f8fafc;
+    --color-surface-alt: #eef4f8;
+    --color-border: #cbd5e1;
+    --color-muted: #64748b;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-surface text-dark antialiased;
+    font-family: "Segoe UI", Inter, sans-serif;
+    background-image:
+      radial-gradient(circle at top left, rgba(46, 111, 149, 0.14), transparent 28%),
+      linear-gradient(180deg, #f8fafc 0%, #eef4f8 100%);
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    @apply transition-all duration-200;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    @apply outline-none ring-2 ring-secondary/40 ring-offset-2 ring-offset-white;
+  }
+
+  ::selection {
+    background: rgba(46, 111, 149, 0.18);
+    color: var(--color-primary);
+  }
+}
+
+@layer components {
+  .app-shell {
+    @apply min-h-screen bg-legal-surface text-dark;
+  }
+
+  .app-shell-dark {
+    @apply min-h-screen bg-legal-hero text-white;
+  }
+
+  .app-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .page-section {
+    @apply py-8 sm:py-10 lg:py-12;
+  }
+
+  .page-header {
+    @apply mb-8 flex flex-col gap-4 sm:mb-10;
+  }
+
+  .page-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.28em] text-secondary;
+  }
+
+  .page-title {
+    @apply text-3xl font-semibold tracking-tight text-primary sm:text-4xl lg:text-5xl;
+  }
+
+  .page-description {
+    @apply max-w-3xl text-sm leading-7 text-slate-600 sm:text-base;
+  }
+
+  .surface-card {
+    @apply rounded-3xl border border-border/80 bg-white shadow-panel;
+  }
+
+  .surface-card-muted {
+    @apply rounded-3xl border border-secondary/10 bg-surface-alt/90 shadow-float;
+  }
+
+  .surface-card-dark {
+    @apply rounded-3xl border border-white/10 bg-white/10 shadow-glow backdrop-blur-xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-glow hover:bg-primary-dark;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-5 py-3 text-sm font-semibold text-white shadow-glow hover:bg-secondary-dark;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-primary/15 bg-white px-5 py-3 text-sm font-semibold text-primary hover:border-secondary/40 hover:text-secondary;
+  }
+
+  .form-input {
+    @apply w-full rounded-2xl border border-border bg-white px-4 py-3 text-sm text-dark shadow-sm placeholder:text-slate-400 focus:border-secondary focus:ring-4 focus:ring-secondary/10;
+  }
+
+  .form-textarea {
+    @apply form-input min-h-[120px] resize-y;
+  }
+
+  .form-select {
+    @apply form-input appearance-none;
+  }
+
+  .table-shell {
+    @apply overflow-hidden rounded-3xl border border-border/80 bg-white shadow-panel;
+  }
+
+  .data-table {
+    @apply min-w-full divide-y divide-slate-200;
+  }
+
+  .data-table thead {
+    @apply bg-surface-alt;
+  }
+
+  .data-table th {
+    @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.2em] text-slate-500;
+  }
+
+  .data-table td {
+    @apply px-4 py-4 align-top text-sm text-slate-700;
+  }
+
+  .data-table tbody tr {
+    @apply border-t border-slate-100;
+  }
+
+  .data-table tbody tr:hover {
+    @apply bg-surface-alt/60;
+  }
+
+  .status-badge {
+    @apply inline-flex w-fit items-center rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em];
+  }
+
+  .status-neutral {
+    @apply border-border bg-surface-alt text-slate-700;
+  }
+
+  .status-info {
+    @apply border-secondary/20 bg-secondary/10 text-secondary-dark;
+  }
+
+  .status-success {
+    @apply border-emerald-200 bg-emerald-50 text-emerald-700;
+  }
+
+  .status-warning {
+    @apply border-amber-200 bg-amber-50 text-amber-700;
+  }
+
+  .status-danger {
+    @apply border-rose-200 bg-rose-50 text-rose-700;
+  }
+
+  .empty-state {
+    @apply rounded-3xl border border-dashed border-border bg-white/80 px-6 py-16 text-center shadow-float;
+  }
+
+  .metric-card {
+    @apply rounded-3xl border border-border/80 bg-white p-5 shadow-float;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-2xl bg-slate-200/80;
+  }
+
+  .skeleton-card {
+    @apply surface-card p-6;
+  }
+}
+
+body {
+  margin: 0;
+}
