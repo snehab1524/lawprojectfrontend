@@ -73,7 +73,6 @@ const Chat = () => {
 
       newSocket = io(SOCKET_BASE_URL, {
         reconnection: false,
-        timeout: 3000,
       });
 
       newSocket.emit("join-user", user.id);

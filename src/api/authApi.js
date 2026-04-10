@@ -3,7 +3,6 @@ import { API_BASE_URL } from "./apiConfig.js";
 
 const API = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 15000,
 });
 
 const AUTH_STORAGE_KEY = "token";
